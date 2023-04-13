@@ -60,16 +60,14 @@ fun MenuDish(navController: NavHostController? = null, dish: Dish) {
         ) {
             Column() {
                 Text(
-                    text = dish.name, fontSize = 18.sp, fontWeight = Bold
+                    text = dish.name, style = MaterialTheme.typography.h2
                 )
                 Text(
                     text = dish.description,
-                    modifier = Modifier
-                        .padding(top = 5.dp, bottom = 5.dp)
-                        .fillMaxWidth(.75f)
+                    style = MaterialTheme.typography.body1
                 )
                 Text(
-                    text = "${dish.price}", fontSize = 18.sp, fontWeight = Bold
+                    text = "${dish.price}", style = MaterialTheme.typography.body2
                 )
             }
             Image(painter = painterResource(id = dish.imageResource), contentDescription = dish.description)
