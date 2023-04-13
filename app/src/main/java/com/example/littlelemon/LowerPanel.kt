@@ -19,6 +19,9 @@ import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.bumptech.glide.Glide
+import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
+import com.bumptech.glide.integration.compose.GlideImage
 import com.example.littlelemon.ui.theme.LittleLemonColor
 
 @Composable
@@ -48,7 +51,7 @@ fun WeeklySpecialCard() {
     }
 }
 
-@OptIn(ExperimentalMaterialApi::class)
+@OptIn(ExperimentalMaterialApi::class, ExperimentalGlideComposeApi::class)
 @Composable
 fun MenuDish(navController: NavHostController? = null, dish: Dish) {
     Card(onClick = {
@@ -76,12 +79,15 @@ fun MenuDish(navController: NavHostController? = null, dish: Dish) {
                     text = "${dish.price}", style = MaterialTheme.typography.body2
                 )
             }
-            Image(
-                painter = painterResource(id = dish.imageResource),
+            GlideImage(
+                model = dish.imageResource,
                 contentDescription = dish.description,
-                modifier = Modifier.clip(
-                    RoundedCornerShape(10.dp)
-                ))
+                modifier =  Modifier.clip(
+                                 RoundedCornerShape(10.dp)
+                            ),
+            )  {
+                it.override(816,816)
+            }
         }
     }
     Divider(

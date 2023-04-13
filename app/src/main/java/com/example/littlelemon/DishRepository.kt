@@ -30,7 +30,8 @@ object DishRepository {
             "Grilled Fish",
             "Fish marinated in fresh orange and lemon juice. Grilled with orange and lemon wedges.",
             19.99,
-            R.drawable.grilledfish
+             R.drawable.grilledfish,
+
         ),
         Dish(
             5,
