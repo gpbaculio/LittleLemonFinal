@@ -83,8 +83,8 @@ fun MenuDish(navController: NavHostController? = null, dish: Dish) {
                 model = dish.imageResource,
                 contentDescription = dish.description,
                 modifier =  Modifier.clip(
-                                 RoundedCornerShape(10.dp)
-                            ),
+                    RoundedCornerShape(10.dp)
+                ),
             )  {
                 it.override(816,816)
             }
